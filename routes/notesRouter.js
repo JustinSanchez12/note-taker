@@ -1,12 +1,11 @@
 const express = require('express');
-const fb = express.Router();
+const notesRouter = express.Router();
 const {readFromFile, readAndAppend} = require('../helpers/fsUtil.js');
 
 
 //TODO: Routes for GET api/notes should read db.json
-fb.get('/api/notes', (req,res) =>{
+notesRouter.get('/api/notes', (req,res) =>{
     console.info(`${req.method} request has been received`);
-
     readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
 })
 
@@ -16,7 +15,7 @@ fb.get('/api/notes', (req,res) =>{
  and then return the new note to the client. You'll need to find a way to give each note a unique
   id when it's saved (look into npm packages that could do this for you).*/
 
-fb.post('/api/notes', (req,res) =>{
+notesRouter.post('/api/notes', (req,res) =>{
     const {title, text} = req.body;
 
     if(title && text) {
@@ -34,8 +33,8 @@ fb.post('/api/notes', (req,res) =>{
 
         res.json(response);
     } else {
-        res.json('Error in posting notes');
+        res.status(400).json('Error in posting notes');
     }
 })
 
-module.exports = fb;
+module.exports = notesRouter;
