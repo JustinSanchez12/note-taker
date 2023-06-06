@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const api = require('./routes/index.js');
+const apiRoutes = require('./routes/index.js');
 
 const port = process.env.PORT || 3001;
 const app = express();
@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // API routes
-app.use('/api/notes', api);
+app.use('/api', apiRoutes);
 
 // GET route for notes.html
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public', 'notes.html'))
+  res.sendFile(path.join(__dirname, 'public', 'notes.html'))  
 );
 
 // GET route for index.html
