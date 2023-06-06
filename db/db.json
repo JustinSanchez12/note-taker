@@ -4,13 +4,13 @@
         "text": "Test text"
     },
     {
-        "title": "Test",
-        "text": "Text",
-        "id": "f0390bb5-5e37-40fb-8d81-7fc3d1ecfbe1"
+        "title": "Express.js",
+        "text": "Go back to Module 11 to learn about node Express.js",
+        "id": "5e780620-bce0-4b6b-aea5-b4b19d6ca1e4"
     },
     {
-        "title": "Create New Title",
-        "text": "Create New Text",
-        "id": "31b6b2ca-d1b5-41c5-bcf4-e8d919f9894b"
+        "title": "Create Notes",
+        "text": "[Insert Note Here] and with express.js, the notes will be saved as a JSON.",
+        "id": "72b2bd3f-a55e-4141-be61-c28ba820b8e1"
     }
 ]
